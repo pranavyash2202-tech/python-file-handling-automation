@@ -1,46 +1,89 @@
 # 📁 Python File Handling & Automation
 
-## 📌 Internship Task 1--Alfido Tech
+🚀 **Internship Project | Alfido Tech**
 
-### 👨‍🎓 Student Details
-- **Name:** Pranav Ranjan  
-- **Role:** Python Developer Intern  
-- **Start Date:** 1 May 2026  
+This project was developed as part of the **Python Developer Internship at Alfido Tech**.  
+The objective of this task is to demonstrate Python file handling, automation logic, and exception handling through real-world file operations.
 
 ---
 
-## 📖 Project Description
-This project demonstrates the implementation of:
-- File handling in Python (TXT and CSV files)
-- Automation of file operations (rename, move, delete)
-- Exception handling using `try-except`
+## 📌 Project Overview
 
-The script performs multiple file operations in a structured and automated way.
+File handling is one of the most important concepts in Python programming and automation.  
+This project automates common file operations such as:
+
+- Reading files  
+- Writing files  
+- Renaming files  
+- Moving files  
+- Deleting files  
+- Handling errors using exception handling  
+
+The project demonstrates how Python can simplify repetitive file management tasks efficiently.
 
 ---
 
-## 🎯 Objectives
-- Understand file handling operations in Python  
-- Automate common file tasks  
-- Handle errors gracefully using exception handling  
-- Write clean and readable Python code  
+## 🎯 Key Objectives
+
+- Understand file handling in Python  
+- Read and write TXT/CSV files  
+- Automate file operations  
+- Implement exception handling using `try-except`  
+- Write clean and maintainable Python code  
 
 ---
 
 ## 🛠️ Technologies Used
-- Python  
-- OS Module  
-- CSV Module  
-- Shutil Module  
+
+- **Python**
+- **OS Module**
+- **Shutil Module**
+- **CSV Module**
 
 ---
 
-## ⚙️ Features
-- ✅ Create and write a text file  
-- ✅ Read a text file  
-- ✅ Create and write a CSV file  
-- ✅ Read a CSV file  
-- ✅ Rename a file  
-- ✅ Move a file to another folder  
-- ✅ Delete a file  
-- ✅ Exception handling for all operations  
+## ⚙️ Features Implemented
+
+✅ Read text files  
+✅ Write data into files  
+✅ Read CSV files  
+✅ Rename files automatically  
+✅ Move files between folders  
+✅ Delete unwanted files  
+✅ Handle errors using `try-except`  
+
+---
+
+## 💻 Code Implementation
+
+```python
+import os
+import shutil
+import csv
+
+try:
+    # Create and write into a text file
+    with open("sample.txt", "w") as file:
+        file.write("Python File Handling Example")
+
+    # Read text file
+    with open("sample.txt", "r") as file:
+        content = file.read()
+        print(content)
+
+    # Rename file
+    os.rename("sample.txt", "updated_sample.txt")
+
+    # Create folder
+    os.makedirs("backup", exist_ok=True)
+
+    # Move file
+    shutil.move("updated_sample.txt", "backup/updated_sample.txt")
+
+    print("File operations completed successfully!")
+
+except FileNotFoundError:
+    print("File not found.")
+
+except Exception as e:
+    print("An error occurred:", e)
